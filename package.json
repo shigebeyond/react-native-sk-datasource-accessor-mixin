@@ -1,0 +1,25 @@
+{
+  "name": "react-native-sk-datasource-accessor-mixin",
+  "version": "1.0.0",
+  "description": "Mixin which can easily manipulate ListViewDataSource, for example: 1 add row 2 delete row 3 get rows 4 count rows",
+  "main": "DataSourceAccessorMixin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shigebeyond/react-native-sk-datasource-accessor-mixin.git"
+  },
+  "keywords": [
+    "react-native",
+    "ListViewDataSource",
+    "access-datasource",
+    "manipuldate-datasource"
+  ],
+  "author": "shigebeyond",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shigebeyond/react-native-sk-datasource-accessor-mixin/issues"
+  },
+  "homepage": "https://github.com/shigebeyond/react-native-sk-datasource-accessor-mixin#readme"
+}
