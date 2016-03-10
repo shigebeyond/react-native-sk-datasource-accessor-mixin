@@ -2,7 +2,28 @@
 
 ##What is it
 
-react-native-sk-datasource-accessor-mixin is a component wraps ListView, supports: 1 pull down to refresh 2 pull up to load more 3 scroll to top 4 scroll to bottom
+react-native-sk-datasource-accessor-mixin is a mixin which can easily manipulate ListViewDataSource.
+
+First of all, let's study ListViewDataSource:
+
+ListViewDataSource is composed of several rows, it use three fields to descript these rows: 
+
+| Prop | Description | Default |
+|---|---|---|
+|**`sectionIdentities`**|An array of identifiers for sections, which tell the render order of sections. |*None*|
+|**`rowIdentities`**|A 2D array of identifiers for rows, which tell the render order of rows. |*None*|
+|**`dataBlob`**|An map of data for sectionIdentities and rowIdentities, its data structure is <sectionID: <rowID: row>>. |*None*|
+
+Second, we normally use json data in our application, and I want to convert json to ListViewDataSource's fields.
+
+So, here comes react-native-sk-datasource-accessor-mixin: 
+
+1. It offer several methods to manipuldate rows of ListViewDataSource.
+
+for example: 1 appendRows(newRows) 2 deleteRow(row)
+
+2. It accept json array and converts json array into dataBlob and rowIdentities of ListViewDataSource.
+
 
 ##How to use it
 
@@ -30,7 +51,7 @@ var test = React.createClass({
 
   getInitialState(){
     return {
-      dataSource: new ListView.DataSource({
+      dataSource: new ListView.DataSource({ // you must declare a dataSource state first, it will be used in DataSourceAccessorMixin
         rowHasChanged:(row1, row2) => {
           return row1 !== row2;
         }
@@ -76,7 +97,7 @@ var test = React.createClass({
 
  onAppendRow(){
    var n = this.rowCount();
-   this.appendRow({id: n, text: 'row ' + n})
+   this.appendRow({id: n, text: 'row ' + n}) // append a row
  },
 
  onDeleteRow(){
@@ -84,7 +105,7 @@ var test = React.createClass({
      console.log('no selected row');
      return;
    }
-   this.deleteRow(this.currRow)
+   this.deleteRow(this.currRow) // delet a row
  },
 
   render() {
