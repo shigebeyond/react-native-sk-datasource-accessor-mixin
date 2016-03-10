@@ -47,11 +47,13 @@ var DataSourceAccessorMixin = require('react-native-sk-datasource-accessor-mixin
 
 var test = React.createClass({
 
-  mixins: [DataSourceAccessorMixin],
+  mixins: [DataSourceAccessorMixin], // 1 inherit the mixin
+
+  _idField: 'id', // 2 declare '_idField',  name of field which represents row's ID
 
   getInitialState(){
     return {
-      dataSource: new ListView.DataSource({ // you must declare a dataSource state first, it will be used in DataSourceAccessorMixin
+      dataSource: new ListView.DataSource({ // 3 declare a dataSource state first, it will be used in DataSourceAccessorMixin
         rowHasChanged:(row1, row2) => {
           return row1 !== row2;
         }
@@ -59,6 +61,7 @@ var test = React.createClass({
     };
   },
 
+  // prepare json data
   componentDidMount(){
    //  var rows = [
    //   {id: 1, text: 'row 1'},
@@ -105,14 +108,14 @@ var test = React.createClass({
      console.log('no selected row');
      return;
    }
-   this.deleteRow(this.currRow) // delet a row
+   this.deleteRow(this.currRow) // delete a row
  },
 
   render() {
     return (
       <View style={styles.container}>
         <ListView
-         dataSource={this.state.dataSource}
+         dataSource={this.state.dataSource} // 4 use the dataSource state in listview
          renderRow={this.renderRow}
        />
        <View style={styles.btnBox}>
@@ -172,7 +175,7 @@ AppRegistry.registerComponent('test', () => test);
 
 | Method | Description | Params |
 |---|---|---|
-|**`idField()`**|Get field name which represents row's ID.  |*None*|
+|**`idField()`**|Get name of field which represents row's ID.  |*None*|
 |**`isEmpty()`**|Whether there is no rows. |*None*|
 |**`rowCount()`**|Count of rows. |*None*|
 |**`rows()`**|Get rows. |*None*|
