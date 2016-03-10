@@ -109,6 +109,7 @@ var test = React.createClass({
      return;
    }
    this.deleteRow(this.currRow) // delete a row
+   this.currRow = null;
  },
 
   render() {
