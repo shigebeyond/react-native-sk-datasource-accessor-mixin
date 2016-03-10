@@ -22,7 +22,7 @@ So, here comes react-native-sk-datasource-accessor-mixin:
 
 for example: 1 appendRows(newRows) 2 deleteRow(row)
 
-2 It accept json array and converts json array into dataBlob and rowIdentities of ListViewDataSource.
+2 It accept json array and converts json array into dataBlob and rowIdentities of ListViewDataSource. (Temporarily not handle sectionIdentities).
 
 
 ##How to use it
