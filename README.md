@@ -6,7 +6,7 @@ react-native-sk-datasource-accessor-mixin is a mixin which can easily manipulate
 
 First of all, let's study ListViewDataSource:
 
-ListViewDataSource is composed of several rows, it use three fields to descript these rows: 
+ListViewDataSource is composed of several rows, it use three fields to descript these rows:
 
 | Prop | Description | Default |
 |---|---|---|
@@ -16,13 +16,13 @@ ListViewDataSource is composed of several rows, it use three fields to descript 
 
 Second, we normally use json data in our application, and I want to convert json to ListViewDataSource's fields.
 
-So, here comes react-native-sk-datasource-accessor-mixin: 
+So, here comes react-native-sk-datasource-accessor-mixin:
 
-1. It offer several methods to manipuldate rows of ListViewDataSource.
+1 It offer several methods to manipuldate rows of ListViewDataSource.
 
 for example: 1 appendRows(newRows) 2 deleteRow(row)
 
-2. It accept json array and converts json array into dataBlob and rowIdentities of ListViewDataSource.
+2 It accept json array and converts json array into dataBlob and rowIdentities of ListViewDataSource.
 
 
 ##How to use it
